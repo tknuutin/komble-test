@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+
+.app {
+  margin: 5px;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.node {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.piece {
+  width: 20px;
+  height: 20px;
+  background-color: red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board {
+  margin-left: 50px;
+  position: relative;
+  width: 440px;
+  height: 400px;
+}
+
+.path-top {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 110px;
+}
+
+.path-top .node, .path-bottom .node {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.path-right .node, .path-left .node {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.path-top-right {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+
+.path-top-right .node {
+  position: relative;
+}
+
+.path-top-right .node:first-child {
+  top: -10px;
+  left: -10px;
+}
+.path-top-right .node:nth-child(2) {
+  top: 10px;
+
+}
+
+
+.path-right {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  right: 0;
+  top: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.path-bottom-right {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.path-bottom-right .node {
+  position: relative;
 }
+
+.path-bottom-right .node:nth-child(2) {
+  top: 20px;
+  left: -10px;
+}
+
+.path-bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  bottom: 0px;
+  left: 110px;
+}
+
+
+.path-bottom-left {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  left: 30px;
+  bottom: 40px;
+}
+
+.path-bottom-left .node {
+  position: relative;
+}
+
+.path-bottom-left .node:first-child {
+  top: 20px;
+}
+
+.path-bottom-left .node:nth-child(2) {
+  top: 0px;
+  left: -10px;
+}
+
+.path-left {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  left: 0;
+  top: 100px;
+}
+
+.path-top-left {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 30px;
+  top: 40px;
+}
+
+.path-top-left .node {
+  position: relative;
+}
+
+.path-top-left .node:first-child {
+  top: 20px;
+}
+
+.path-top-left .node:nth-child(2) {
+  top: 0;
+  left: 10px;
+}
+
+
